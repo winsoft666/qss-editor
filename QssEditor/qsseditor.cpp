@@ -46,7 +46,7 @@ QssEditor::QssEditor(QWidget *parent) :
     m_changed(false)
 {
     ui->setupUi(this);
-    this->resize(920, 600);
+    this->resize(1080, 600);
 
     // Disable tab #4 to preview disabled tabs
     ui->tabWidget->setTabEnabled(3, false);
@@ -59,6 +59,13 @@ QssEditor::QssEditor(QWidget *parent) :
     Settings::instance()->addDefaultValues(defaultValues);
 
     resetWindowTitle();
+
+    // add built-in themes to open list
+    ui->toolOpen->setPopupMode(QToolButton::InstantPopup);
+    ui->toolOpen->setMenu(new QMenu(ui->toolOpen));
+    ui->toolOpen->menu()->addAction(tr("Built-in Dark Theme"), this, SLOT(slotOpenBuiltinDarkTheme()));
+    ui->toolOpen->menu()->addAction(tr("Built-in Light Theme"), this, SLOT(slotOpenBuiltinLightTheme()));
+    ui->toolOpen->menu()->addAction(tr("Open from Disk"), this, SLOT(slotOpen()));
 
     // icons
     ui->toolOpen->setIcon(QIcon::fromTheme("document-open", QIcon(":/images/open.png")));
@@ -202,8 +209,6 @@ void QssEditor::closeEvent(QCloseEvent *e)
 
 void QssEditor::open(const QString &fileName)
 {
-    qDebug("Opening style");
-
     if(!m_project.setFilePath(fileName))
     {
         showError(tr("Cannot open style:") + ' ' + m_project.error());
@@ -317,9 +322,6 @@ void QssEditor::restoreLastFiles()
         if(!QFile::exists(file))
             continue;
 
-        if(!ui->toolOpen->menu())
-            ui->toolOpen->setMenu(new QMenu(ui->toolOpen));
-
         ui->toolOpen->menu()->addAction(QDir::toNativeSeparators(file), this, SLOT(slotOpenFromHistoryMenu()));
     }
 }
@@ -332,8 +334,12 @@ void QssEditor::saveLastFiles()
     {
         const QList<QAction *> actions = ui->toolOpen->menu()->actions();
 
+        int idx = 0;
         foreach(QAction *a, actions)
         {
+            idx++;
+            if(idx <= 3) // Skip the first 3
+                continue;
             files.append(a->text());
         }
 
@@ -341,7 +347,7 @@ void QssEditor::saveLastFiles()
 
         // maximum history size
         while(files.size() > 15)
-            files.removeLast();
+            files.removeFirst();
     }
 
     SETTINGS_SET_STRING_LIST(SETTING_LAST_FILES, files);
@@ -353,28 +359,13 @@ void QssEditor::appendCurrentProjectToHistory()
     if(m_lastFileName.isEmpty())
         return;
 
-    if(!ui->toolOpen->menu())
-        ui->toolOpen->setMenu(new QMenu(ui->toolOpen));
-
     QList<QAction *> actions = ui->toolOpen->menu()->actions();
-    QAction *movedAction = 0;
 
-    // already first element
-    if(!actions.isEmpty() && actions.first()->text() == m_lastFileName)
+    // already last element
+    if(!actions.isEmpty() && actions.last()->text() == m_lastFileName)
         return;
 
-    foreach(QAction *a, actions)
-    {
-        if(a->text() == m_lastFileName)
-        {
-            ui->toolOpen->menu()->removeAction(a);
-            movedAction = a;
-            break;
-        }
-    }
-
-    ui->toolOpen->menu()->insertAction(!actions.isEmpty() ? actions.first() : 0,
-                                       movedAction ? movedAction : new QAction(m_lastFileName, ui->toolOpen->menu()));
+    ui->toolOpen->menu()->addAction(m_lastFileName, this, SLOT(slotOpenFromHistoryMenu()));
 }
 
 void QssEditor::resetWindowTitle()
@@ -404,6 +395,34 @@ void QssEditor::slotApplyCss()
 {
     ui->widgetAllWidgets->setStyleSheet(ui->text->text());
     ui->toolButton->menu()->setStyleSheet(ui->widgetAllWidgets->styleSheet());
+}
+
+void QssEditor::openBuiltinTheme(const QString &filePath)
+{
+    if(!m_project.setFilePath(filePath))
+    {
+        showError(tr("Cannot open style:") + ' ' + m_project.error());
+        return;
+    }
+
+    ui->text->setText(m_project.qss());
+
+    m_changed = false;
+    ui->toolSave->setEnabled(false);
+    ui->toolClose->setEnabled(true);
+
+    // apply QSS right now
+    m_timerDelayedApply->start(0);
+}
+
+void QssEditor::slotOpenBuiltinDarkTheme()
+{
+    openBuiltinTheme(":/qdarkstyle/dark/darkstyle.qss");
+}
+
+void QssEditor::slotOpenBuiltinLightTheme()
+{
+    openBuiltinTheme(":/qdarkstyle/light/lightstyle.qss");
 }
 
 void QssEditor::slotOpen()

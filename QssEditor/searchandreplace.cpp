@@ -28,6 +28,7 @@ SearchAndReplace::SearchAndReplace(QsciScintilla *editor, QWidget *parent) :
     m_firstFind(true)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
     QString selectedText = m_editor->selectedText();
 

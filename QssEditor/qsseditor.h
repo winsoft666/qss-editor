@@ -58,6 +58,9 @@ private:
 private slots:
     void slotCssChanged();
     void slotApplyCss();
+    void slotOpenBuiltinDarkTheme();
+    void slotOpenBuiltinLightTheme();
+    void openBuiltinTheme(const QString& filePath);
     void slotOpen();
     void slotSave();
     void slotSaveAs();

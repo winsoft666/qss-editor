@@ -27,6 +27,7 @@ About::About(QWidget *parent) :
     setObjectName("about");
 
     setWindowTitle(Tools::aboutQssEditorTitle());
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
     ui->setupUi(this);
 
@@ -34,7 +35,10 @@ About::About(QWidget *parent) :
     ui->labelVersion->setText(QString("QSS Editor %1").arg(NVER_STRING));
 
     ui->labelCopyright->setText(QString("(C) 2014 %1 &lt;<a href=\"mailto:dmitrymq@gmail.com\">"
-                                        "dmitrymq@gmail.com</a>&gt;").arg(tr("Dmitry Baryshev")));
+                                        "dmitrymq@gmail.com</a>&gt;<br/>"
+                                        "(C) 2024 %2 &lt;<a href=\"mailto:smart7178@163.com\">"
+                                        "smart7178@163.com</a>&gt;"
+                                        ).arg(tr("Dmitry Baryshev")).arg("Jiang XueQiao"));
 
     adjustSize();
 }

@@ -9,19 +9,19 @@
         <translation>好的</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="103"/>
+        <location filename="../about.ui" line="106"/>
         <source>QSS Editor is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</source>
         <extracomment>See https://www.gnu.org/licenses/gpl-2.0.txt . &quot;THT&quot; is the name of the application</extracomment>
         <translation>QSS 编辑器的发布是希望它能对用户有所帮助，但它没有任何担保；也没有适销性或针对特定用途的的默示性担保。</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="122"/>
+        <location filename="../about.ui" line="125"/>
         <source>QSS Editor is a tool to edit and preview Qt style sheets</source>
         <extracomment>&quot;THT&quot; is the name of the application. The URL to visit will be added in runtime. Ticker is a short company name, see http://www.investopedia.com/terms/t/tickersymbol.asp . The common practice is to borrow &quot;ticker&quot; from English and incorporate into your language (see http://en.wikipedia.org/wiki/Loanword)</extracomment>
         <translation>QSS 编辑器是一个编辑和预览 Qt 样式表的工具</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="37"/>
+        <location filename="../about.cpp" line="41"/>
         <source>Dmitry Baryshev</source>
         <translation>Dmitry Baryshev</translation>
     </message>
@@ -59,7 +59,7 @@
         <translation>需要重新启动程序</translation>
     </message>
     <message>
-        <location filename="../options.cpp" line="35"/>
+        <location filename="../options.cpp" line="36"/>
         <source>System</source>
         <translation>系统</translation>
     </message>
@@ -101,7 +101,7 @@
     <name>QssEditor</name>
     <message>
         <location filename="../qsseditor.ui" line="29"/>
-        <location filename="../qsseditor.cpp" line="414"/>
+        <location filename="../qsseditor.cpp" line="433"/>
         <source>Open style</source>
         <translation>打开样式</translation>
     </message>
@@ -112,7 +112,7 @@
     </message>
     <message>
         <location filename="../qsseditor.ui" line="46"/>
-        <location filename="../qsseditor.cpp" line="436"/>
+        <location filename="../qsseditor.cpp" line="455"/>
         <source>Save style as</source>
         <translation>另存样式为</translation>
     </message>
@@ -157,68 +157,84 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="209"/>
+        <location filename="../qsseditor.cpp" line="66"/>
+        <source>Built-in Dark Theme</source>
+        <translation>内置黑色主题</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.cpp" line="67"/>
+        <source>Built-in Light Theme</source>
+        <translation>内置浅色主题</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.cpp" line="68"/>
+        <source>Open from Disk</source>
+        <translation>从磁盘打开</translation>
+    </message>
+    <message>
+        <location filename="../qsseditor.cpp" line="214"/>
+        <location filename="../qsseditor.cpp" line="404"/>
         <source>Cannot open style:</source>
         <translation>不能打开样式:</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="237"/>
+        <location filename="../qsseditor.cpp" line="242"/>
         <source>Cannot save style:</source>
         <translation>不能保存样式:</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="256"/>
+        <location filename="../qsseditor.cpp" line="261"/>
         <source>No error</source>
         <translation>没有错误</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="259"/>
+        <location filename="../qsseditor.cpp" line="264"/>
         <source>File access error</source>
         <translation>文件读取错误</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="262"/>
+        <location filename="../qsseditor.cpp" line="267"/>
         <source>Malformed file</source>
         <translation>文件格式错误</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="265"/>
+        <location filename="../qsseditor.cpp" line="270"/>
         <source>Unknown error</source>
         <translation>未知错误</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="272"/>
+        <location filename="../qsseditor.cpp" line="277"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="273"/>
+        <location filename="../qsseditor.cpp" line="278"/>
         <source>This will discard all the unsaved changes</source>
         <translation>这将丢弃所有未保存的更改</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="286"/>
+        <location filename="../qsseditor.cpp" line="291"/>
         <source>Cannot open style. The file doesn&apos;t exist or not readable</source>
         <translation>无法打开样式。该文件不存在或无法读取</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="292"/>
+        <location filename="../qsseditor.cpp" line="297"/>
         <source>Cannot change directory</source>
         <translation>不能更改目录</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="306"/>
+        <location filename="../qsseditor.cpp" line="311"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="382"/>
+        <location filename="../qsseditor.cpp" line="373"/>
         <source>QSS Editor</source>
         <translation>QSS 编辑器</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="414"/>
-        <location filename="../qsseditor.cpp" line="436"/>
+        <location filename="../qsseditor.cpp" line="433"/>
+        <location filename="../qsseditor.cpp" line="455"/>
         <source>Qt Style Sheets (*.qss)</source>
         <translation>Qt 样式表 (*.qss)</translation>
     </message>

@@ -138,7 +138,9 @@ FORMS += qsseditor.ui \
     options.ui \
     about.ui
 
-RESOURCES += qsseditor.qrc
+RESOURCES += qsseditor.qrc \
+    theme/dark/darkstyle.qrc \
+    theme/light/lightstyle.qrc
 
 RC_FILE = qsseditor.rc
 

@@ -28,6 +28,7 @@ Options::Options(QWidget *parent) :
     m_startTranslationIndex(-1)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
     ui->checkOpenLast->setChecked(SETTINGS_GET_BOOL(SETTING_OPEN_LAST_FILE));
     ui->spinPreviewDelay->setValue(SETTINGS_GET_INT(SETTING_PREVIEW_DELAY));

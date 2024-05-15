@@ -400,7 +400,6 @@ const char *QsciLexerQSS::keywords(int set) const
 QFont QsciLexerQSS::defaultFont(int style) const
 {
     QFont font = QsciLexerCSS::defaultFont(style);
-    font.setFamily("Ubuntu Mono");
     font.setBold(false);
 
     return font;
