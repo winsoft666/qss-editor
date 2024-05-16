@@ -17,10 +17,9 @@
 
 #include <QEventLoop>
 #include <QRegExp>
-
 #include "Qsci/qsciapis.h"
-
 #include "qscilexerqss.h"
+#include "settings.h"
 
 QsciLexerQSS::QsciLexerQSS(QObject *parent)
     : QsciLexerCSS(parent)
@@ -400,6 +399,8 @@ const char *QsciLexerQSS::keywords(int set) const
 QFont QsciLexerQSS::defaultFont(int style) const
 {
     QFont font = QsciLexerCSS::defaultFont(style);
+    font.setFamily(SETTINGS_GET_STRING(SETTING_FONT_FAMILY, DEFAULT_FONT_FAMILY));
+    font.setPointSize(SETTINGS_GET_INT(SETTING_FONT_SIZE, DEFAULT_FONT_SIZE));
     font.setBold(false);
 
     return font;

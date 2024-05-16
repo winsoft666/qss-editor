@@ -38,7 +38,7 @@ About::About(QWidget *parent) :
                                         "dmitrymq@gmail.com</a>&gt;<br/>"
                                         "(C) 2024 %2 &lt;<a href=\"mailto:smart7178@163.com\">"
                                         "smart7178@163.com</a>&gt;"
-                                        ).arg(tr("Dmitry Baryshev")).arg("Jiang XueQiao"));
+                                        ).arg(tr("Dmitry Baryshev")).arg(tr("Jiang XueQiao")));
 
     adjustSize();
 }

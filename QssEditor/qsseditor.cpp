@@ -46,7 +46,6 @@ QssEditor::QssEditor(QWidget *parent) :
     m_changed(false)
 {
     ui->setupUi(this);
-    this->resize(1080, 600);
 
     // Disable tab #4 to preview disabled tabs
     ui->tabWidget->setTabEnabled(3, false);
@@ -63,9 +62,9 @@ QssEditor::QssEditor(QWidget *parent) :
     // add built-in themes to open list
     ui->toolOpen->setPopupMode(QToolButton::InstantPopup);
     ui->toolOpen->setMenu(new QMenu(ui->toolOpen));
-    ui->toolOpen->menu()->addAction(tr("Built-in Dark Theme"), this, SLOT(slotOpenBuiltinDarkTheme()));
-    ui->toolOpen->menu()->addAction(tr("Built-in Light Theme"), this, SLOT(slotOpenBuiltinLightTheme()));
-    ui->toolOpen->menu()->addAction(tr("Open from Disk"), this, SLOT(slotOpen()));
+    ui->toolOpen->menu()->addAction(tr("Built-in dark theme"), this, SLOT(slotOpenBuiltinDarkTheme()));
+    ui->toolOpen->menu()->addAction(tr("Built-in light theme"), this, SLOT(slotOpenBuiltinLightTheme()));
+    ui->toolOpen->menu()->addAction(tr("Open from disk"), this, SLOT(slotOpen()));
 
     // icons
     ui->toolOpen->setIcon(QIcon::fromTheme("document-open", QIcon(":/images/open.png")));
@@ -170,6 +169,22 @@ QssEditor::QssEditor(QWidget *parent) :
     restoreLastFiles();
 
     QTimer::singleShot(0, this, SLOT(slotDelayedOpen()));
+
+    int w = 0, h = 0;
+    if(SETTINGS_GET_BOOL(SETTING_REMEMBER_WINDOW_SIZE))
+    {
+        w = SETTINGS_GET_INT(SETTING_WINDOW_WIDTH);
+        h = SETTINGS_GET_INT(SETTING_WINDOW_HEIGHT);
+    }
+
+    if(w > 0 && h > 0)
+    {
+        resize(w, h);
+    }
+    else
+    {
+        resize(800, 600);
+    }
 }
 
 QssEditor::~QssEditor()
@@ -201,10 +216,13 @@ void QssEditor::closeEvent(QCloseEvent *e)
     if(continueWhenUnsaved())
     {
         saveLastFiles();
+        rememberWindowSize();
         e->accept();
     }
     else
+    {
         e->ignore();
+    }
 }
 
 void QssEditor::open(const QString &fileName)
@@ -354,6 +372,15 @@ void QssEditor::saveLastFiles()
     SETTINGS_SET_STRING(SETTING_LAST_FILE, m_lastFileName);
 }
 
+void QssEditor::rememberWindowSize()
+{
+    if(SETTINGS_GET_BOOL(SETTING_REMEMBER_WINDOW_SIZE))
+    {
+        SETTINGS_SET_INT(SETTING_WINDOW_WIDTH, width());
+        SETTINGS_SET_INT(SETTING_WINDOW_HEIGHT, height());
+    }
+}
+
 void QssEditor::appendCurrentProjectToHistory()
 {
     if(m_lastFileName.isEmpty())
@@ -491,6 +518,9 @@ void QssEditor::slotOptions()
     {
         opt.saveSettings();
         resetPreviewDelay();
+
+        QsciLexerQSS *lexQss = new QsciLexerQSS(this);
+        ui->text->setLexer(lexQss);
     }
 }
 

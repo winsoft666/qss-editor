@@ -1,6 +1,5 @@
 TARGET = QssEditor
 TEMPLATE = app
-DESTDIR     = $$PWD/../bin
 
 QT += core gui
 

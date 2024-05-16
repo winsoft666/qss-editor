@@ -30,6 +30,9 @@
 #include <QHash>
 #include <QMap>
 
+#define DEFAULT_FONT_FAMILY "Arial"
+#define DEFAULT_FONT_SIZE 12
+
 #define SETTINGS_GET_BOOL Settings::instance()->value<bool>
 #define SETTINGS_SET_BOOL Settings::instance()->setValue<bool>
 
@@ -125,6 +128,11 @@
 #define SETTING_FIND_REPLACE_CASE_SENSITIVE  "fr-case-sensitive"
 #define SETTING_FIND_REPLACE_WHOLE_WORDS     "fr-whole-words"
 #define SETTING_FIND_REPLACE_REGEXP          "fr-regexp"
+#define SETTING_FONT_FAMILY                  "font-family"
+#define SETTING_FONT_SIZE                    "font-size"
+#define SETTING_REMEMBER_WINDOW_SIZE         "remember-window-size"
+#define SETTING_WINDOW_WIDTH                 "window-width"
+#define SETTING_WINDOW_HEIGHT                "window-height"
 
 class SettingsPrivate;
 

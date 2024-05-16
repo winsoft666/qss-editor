@@ -30,6 +30,11 @@ Options::Options(QWidget *parent) :
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
+    ui->checkRememberSize->setChecked(SETTINGS_GET_BOOL(SETTING_REMEMBER_WINDOW_SIZE));
+
+    ui->fontComboBox->setCurrentText(SETTINGS_GET_STRING(SETTING_FONT_FAMILY, DEFAULT_FONT_FAMILY));
+    ui->spinFontSize->setValue(SETTINGS_GET_INT(SETTING_FONT_SIZE, DEFAULT_FONT_SIZE));
+
     ui->checkOpenLast->setChecked(SETTINGS_GET_BOOL(SETTING_OPEN_LAST_FILE));
     ui->spinPreviewDelay->setValue(SETTINGS_GET_INT(SETTING_PREVIEW_DELAY));
 
@@ -82,7 +87,10 @@ void Options::slotSomethingImportantChanged()
 
 void Options::saveSettings() const
 {
+    SETTINGS_SET_STRING(SETTING_FONT_FAMILY, ui->fontComboBox->currentText());
+    SETTINGS_SET_INT(SETTING_FONT_SIZE, ui->spinFontSize->value());
     SETTINGS_SET_STRING(SETTING_TRANSLATION, ui->comboLang->itemData(ui->comboLang->currentIndex()).toString(), Settings::NoSync);
     SETTINGS_SET_BOOL(SETTING_OPEN_LAST_FILE, ui->checkOpenLast->isChecked(), Settings::NoSync);
+    SETTINGS_SET_BOOL(SETTING_REMEMBER_WINDOW_SIZE, ui->checkRememberSize->isChecked());
     SETTINGS_SET_INT(SETTING_PREVIEW_DELAY, ui->spinPreviewDelay->value());
 }

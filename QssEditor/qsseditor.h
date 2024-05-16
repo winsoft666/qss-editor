@@ -51,6 +51,7 @@ private:
     void showError(const QString &err);
     void restoreLastFiles();
     void saveLastFiles();
+    void rememberWindowSize();
     void appendCurrentProjectToHistory();
     void resetWindowTitle();
     void resetPreviewDelay();

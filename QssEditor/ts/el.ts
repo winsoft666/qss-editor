@@ -25,6 +25,11 @@
         <source>Dmitry Baryshev</source>
         <translation>Dmitry Baryshev</translation>
     </message>
+    <message>
+        <location filename="../about.cpp" line="41"/>
+        <source>Jiang XueQiao</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Options</name>
@@ -34,32 +39,52 @@
         <translation>Επιλογές</translation>
     </message>
     <message>
-        <location filename="../options.ui" line="22"/>
+        <location filename="../options.ui" line="25"/>
         <source>Language:</source>
         <translation>Γλώσσα:</translation>
     </message>
     <message>
-        <location filename="../options.ui" line="57"/>
+        <location filename="../options.ui" line="60"/>
         <source>Open last style at startup</source>
         <translation>Ανοιχτό τελευταίο στυλ κατά την εκκίνηση</translation>
     </message>
     <message>
-        <location filename="../options.ui" line="66"/>
+        <location filename="../options.ui" line="67"/>
+        <source>Remember window size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../options.ui" line="76"/>
         <source>Preview delay:</source>
         <translation>Καθυστέρηση προεπισκόπησης:</translation>
     </message>
     <message>
-        <location filename="../options.ui" line="73"/>
+        <location filename="../options.ui" line="83"/>
         <source>ms</source>
         <translation>μδευ</translation>
     </message>
     <message>
-        <location filename="../options.ui" line="120"/>
+        <location filename="../options.ui" line="113"/>
+        <source>Font family:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../options.ui" line="147"/>
+        <source>Font size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../options.ui" line="167"/>
+        <source>pt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../options.ui" line="207"/>
         <source>Need restart</source>
         <translation>Απαιτείται επανεκκίνηση</translation>
     </message>
     <message>
-        <location filename="../options.cpp" line="36"/>
+        <location filename="../options.cpp" line="41"/>
         <source>System</source>
         <translation>Σύστημα</translation>
     </message>
@@ -101,7 +126,7 @@
     <name>QssEditor</name>
     <message>
         <location filename="../qsseditor.ui" line="29"/>
-        <location filename="../qsseditor.cpp" line="433"/>
+        <location filename="../qsseditor.cpp" line="460"/>
         <source>Open style</source>
         <translation>Άνοιγμα στυλ</translation>
     </message>
@@ -112,7 +137,7 @@
     </message>
     <message>
         <location filename="../qsseditor.ui" line="46"/>
-        <location filename="../qsseditor.cpp" line="455"/>
+        <location filename="../qsseditor.cpp" line="482"/>
         <source>Save style as</source>
         <translation>Αποθήκευση στυλ ως</translation>
     </message>
@@ -157,84 +182,84 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../qsseditor.cpp" line="65"/>
+        <source>Built-in dark theme</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qsseditor.cpp" line="66"/>
-        <source>Built-in Dark Theme</source>
+        <source>Built-in light theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qsseditor.cpp" line="67"/>
-        <source>Built-in Light Theme</source>
+        <source>Open from disk</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="68"/>
-        <source>Open from Disk</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qsseditor.cpp" line="214"/>
-        <location filename="../qsseditor.cpp" line="404"/>
+        <location filename="../qsseditor.cpp" line="232"/>
+        <location filename="../qsseditor.cpp" line="431"/>
         <source>Cannot open style:</source>
         <translation>Αδύνατο το άνοιγμα του στυλ:</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="242"/>
+        <location filename="../qsseditor.cpp" line="260"/>
         <source>Cannot save style:</source>
         <translation>Δεν είναι δυνατή η αποθήκευση του στυλ:</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="261"/>
+        <location filename="../qsseditor.cpp" line="279"/>
         <source>No error</source>
         <translation>Κανένα σφάλμα</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="264"/>
+        <location filename="../qsseditor.cpp" line="282"/>
         <source>File access error</source>
         <translation>Σφάλμα πρόσβασης Αρχείου</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="267"/>
+        <location filename="../qsseditor.cpp" line="285"/>
         <source>Malformed file</source>
         <translation>Ακατάλληλο αρχείο</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="270"/>
+        <location filename="../qsseditor.cpp" line="288"/>
         <source>Unknown error</source>
         <translation>Άγνωστο σφάλμα</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="277"/>
+        <location filename="../qsseditor.cpp" line="295"/>
         <source>Warning</source>
         <translation>Προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="278"/>
+        <location filename="../qsseditor.cpp" line="296"/>
         <source>This will discard all the unsaved changes</source>
         <translation>Αυτό θα απορρίψει όλες τις μη αποθηκευμένες αλλαγές</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="291"/>
+        <location filename="../qsseditor.cpp" line="309"/>
         <source>Cannot open style. The file doesn&apos;t exist or not readable</source>
         <translation>Δεν είναι δυνατό το άνοιγμα στυλ. Το αρχείο δεν υπάρχει ή δεν είναι αναγνώσιμο</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="297"/>
+        <location filename="../qsseditor.cpp" line="315"/>
         <source>Cannot change directory</source>
         <translation>Δεν είναι δυνατή η αλλαγή καταλόγου</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="311"/>
+        <location filename="../qsseditor.cpp" line="329"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="373"/>
+        <location filename="../qsseditor.cpp" line="400"/>
         <source>QSS Editor</source>
         <translation>QSS Editor</translation>
     </message>
     <message>
-        <location filename="../qsseditor.cpp" line="433"/>
-        <location filename="../qsseditor.cpp" line="455"/>
+        <location filename="../qsseditor.cpp" line="460"/>
+        <location filename="../qsseditor.cpp" line="482"/>
         <source>Qt Style Sheets (*.qss)</source>
         <translation>Qt Style Sheets (*.qss)</translation>
     </message>
