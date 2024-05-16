@@ -63,7 +63,7 @@
      <item>
       <widget class="QPushButton" name="pushFind">
        <property name="text">
-        <string>Find</string>
+        <string>Find(&amp;F)</string>
        </property>
       </widget>
      </item>
@@ -73,7 +73,7 @@
         <bool>false</bool>
        </property>
        <property name="text">
-        <string extracomment="The sign &quot;&amp;&amp;&quot; means &quot;&amp;&quot; (&quot;AND&quot;). So the button name means &quot;Replace the found text and search again&quot;">Replace&amp;&amp;Next</string>
+        <string extracomment="The sign &quot;&amp;&amp;&quot; means &quot;&amp;&quot; (&quot;AND&quot;). So the button name means &quot;Replace the found text and search again&quot;">Replace&amp;&amp;Next(&amp;R)</string>
        </property>
       </widget>
      </item>

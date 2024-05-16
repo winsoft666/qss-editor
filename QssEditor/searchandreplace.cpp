@@ -46,6 +46,7 @@ SearchAndReplace::SearchAndReplace(QsciScintilla *editor, QWidget *parent) :
     ui->checkRegexp->setChecked(SETTINGS_GET_BOOL(SETTING_FIND_REPLACE_REGEXP, false));
 
     ui->lineFind->selectAll();
+    ui->lineFind->setFocus();
 
     connect(this, SIGNAL(accepted()), this, SLOT(slotAccepted()));
 }

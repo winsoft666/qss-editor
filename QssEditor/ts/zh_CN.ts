@@ -172,12 +172,12 @@
         <translation>关于Qt</translation>
     </message>
     <message>
-        <location filename="../qsseditor.ui" line="179"/>
+        <location filename="../qsseditor.ui" line="181"/>
         <source>Preview style</source>
         <translation>预览样式</translation>
     </message>
     <message>
-        <location filename="../qsseditor.ui" line="940"/>
+        <location filename="../qsseditor.ui" line="1236"/>
         <source>Tab 4</source>
         <translation>Tab 4</translation>
     </message>
@@ -303,14 +303,14 @@
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="66"/>
-        <source>Find</source>
-        <translation>查找</translation>
+        <source>Find(&amp;F)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="76"/>
-        <source>Replace&amp;&amp;Next</source>
+        <source>Replace&amp;&amp;Next(&amp;R)</source>
         <extracomment>The sign &quot;&amp;&amp;&quot; means &quot;&amp;&quot; (&quot;AND&quot;). So the button name means &quot;Replace the found text and search again&quot;</extracomment>
-        <translation>替换并查找下一个</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="86"/>

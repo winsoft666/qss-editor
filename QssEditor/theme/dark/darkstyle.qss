@@ -1,6 +1,8 @@
 /*
 Light Style
 
+Based on https://github.com/ColinDuquesnoy/QDarkStyleSheet
+
 See Qt documentation:
 
   - https://doc.qt.io/qt-5/stylesheet.html
@@ -1398,6 +1400,7 @@ QLineEdit {
   border: 1px solid #455364;
   border-radius: 4px;
   color: #DFE1E2;
+  selection-background-color: #346792;
 }
 
 QLineEdit:disabled {

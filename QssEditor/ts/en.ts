@@ -172,12 +172,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.ui" line="179"/>
+        <location filename="../qsseditor.ui" line="181"/>
         <source>Preview style</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsseditor.ui" line="940"/>
+        <location filename="../qsseditor.ui" line="1236"/>
         <source>Tab 4</source>
         <translation type="unfinished"></translation>
     </message>
@@ -303,12 +303,12 @@
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="66"/>
-        <source>Find</source>
+        <source>Find(&amp;F)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../searchandreplace.ui" line="76"/>
-        <source>Replace&amp;&amp;Next</source>
+        <source>Replace&amp;&amp;Next(&amp;R)</source>
         <extracomment>The sign &quot;&amp;&amp;&quot; means &quot;&amp;&quot; (&quot;AND&quot;). So the button name means &quot;Replace the found text and search again&quot;</extracomment>
         <translation type="unfinished"></translation>
     </message>
