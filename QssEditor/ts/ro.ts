@@ -177,7 +177,7 @@
         <translation>Previzualizare stil</translation>
     </message>
     <message>
-        <location filename="../qsseditor.ui" line="1236"/>
+        <location filename="../qsseditor.ui" line="1237"/>
         <source>Tab 4</source>
         <translation type="unfinished"></translation>
     </message>
